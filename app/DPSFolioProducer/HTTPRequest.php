@@ -115,6 +115,8 @@ class HTTPRequest
 
         } elseif($this->get_response_code() !== 200 ||
             !$this->isStatusOK()) {
+            
+            throw new \Exception($this->response->status.(isset($this->response->errorDetail) ? "\n".$this->response->errorDetail : ''), $this->get_response_code());
 
             $this->errors[] = new \DPSFolioProducer\Errors\APIResponseError(
                 $this->response->errorDetail,
