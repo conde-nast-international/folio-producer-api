@@ -1,4 +1,5 @@
 {
+  "name": "conde-nast-international/folio-producer-api",
   "require": {
     "php": ">=5.3.3"
   },
